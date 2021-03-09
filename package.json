@@ -1,0 +1,29 @@
+{
+  "name": "nodeproject",
+  "version": "1.0.0",
+  "description": "server application for recipes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dario184/myrepo.git"
+  },
+  "author": "Mangili Dario",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dario184/myrepo/issues"
+  },
+  "homepage": "https://github.com/Dario184/myrepo#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "got": "^11.8.2",
+    "image-size": "^0.9.4",
+    "jsdom": "^16.5.0",
+    "mongoose": "^5.11.18",
+    "nodemon": "^2.0.7"
+  }
+}
