@@ -22,6 +22,6 @@ app.get('/ricerca/:key', (req, res) => {
         res.send(dump);
     });
 });
-app.listen(port || process.env.PORT,()=>{
+app.listen(process.env.PORT || port, () =>{
     console.log('Server up, listening on port ' + port);
 });
