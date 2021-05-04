@@ -10,7 +10,7 @@ app.use(express.json());
 //definizione delle rotte delle api di crud 
 
 const insertRoute = require('./routes/insert');
-app.use('/insert', insertRoute);
+app.use('/insert',insertRoute);
 
 const updateRoute = require('./routes/update');
 app.use('/update', updateRoute);
@@ -35,6 +35,9 @@ app.use('/search', searchRoute);
 
 const scraRoute = require('./routes/scrap');
 app.use('/scrap', scraRoute);
+
+const handleroute = require('./routes/Handle');
+app.use('/handle',handleroute);
 
 app.get('/', function(req, res){
     res.send('ciao sono online');
