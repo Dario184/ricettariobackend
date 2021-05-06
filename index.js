@@ -36,6 +36,9 @@ app.use('/search', searchRoute);
 const scraRoute = require('./routes/scrap');
 app.use('/scrap', scraRoute);
 
+const exploreRoute = require('./routes/explore');
+app.use('/explore', exploreRoute);
+
 app.get('/', function(req, res){
     res.send('ciao sono online');
 });
