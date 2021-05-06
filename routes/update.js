@@ -6,7 +6,7 @@ const saveds = require('../model/saved');
 const users = require('../model/users');
 const lists = require('../model/list');
 
-router.get('/', async (req, res) => {
+router.get('/',async (req, res) => {
     res.send('sei nelle API di update');
 });
 
