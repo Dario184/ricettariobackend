@@ -9,10 +9,10 @@ router.get('/', async(req,res) => {
 });
 router.post('/', async(req,res) =>{
     if(await recipes.exists({titolo: req.body.titolo})){
-        res.json(recipes.findOne({titolo: req.body.titolo}));
+        res.json(await recipes.findOne({ titolo: req.body.titolo }));
     }else{
         got('https://poetic-orb-283600.ew.r.appspot.com/scrap/'+req.body.link).then(() => {
-            res.json(recipes.findOne({ titolo: req.body.titolo }));
+            res.json(await recipes.findOne({ titolo: req.body.titolo }));
         });
     }
 });
