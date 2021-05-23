@@ -3,8 +3,9 @@ const router = express.Router();
 const got = require('got');
 const jsdom = require('jsdom');
 const {JSDOM} = jsdom;
+const verify = require("./verify");
 
-router.get('/', (req, res) => {
+router.get('/', verify.auth,(req, res) => {
     res.setHeader('Content-Type', 'application/json');
     got('https://www.giallozafferano.it/Ultime-ricette/').then(response =>{
     const dom = new JSDOM(response.body);
@@ -17,7 +18,7 @@ router.get('/', (req, res) => {
         }
             dump.push(tmp);
         }
-        res.json(dump);
+        res.cookie('user',req.user).json(dump);
     });
 });
 

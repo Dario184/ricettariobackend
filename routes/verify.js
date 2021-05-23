@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-function auth(req, res, next) {
+exports.auth = (req, res, next) => {
     const token = req.header('auth-token');
     if (!token) return res.status(401).send('Bad access');
 
