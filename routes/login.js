@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
 
     // assegnazione del token JWT 
 
-    const token = jwt.sign({_id : user._id}, process.env.KEY);
+    const token = jwt.sign(user.nickname, process.env.KEY);
     res.header('auth-token', token).send(token);  
 });
 

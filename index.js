@@ -36,6 +36,9 @@ app.use('/search', searchRoute);
 const scraRoute = require('./routes/scrap');
 app.use('/scrap', scraRoute);
 
+const exploreRoute = require('./routes/explore');
+app.use('/explore', exploreRoute);
+
 const handleroute = require('./routes/Handle');
 app.use('/handle',handleroute);
 
