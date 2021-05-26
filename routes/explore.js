@@ -5,8 +5,7 @@ const jsdom = require('jsdom');
 const {JSDOM} = jsdom;
 const verify = require("./verify");
 
-router.get('/',verify.auth,(req, res) => {
-    res.setHeader('Content-Type', 'application/json');
+router.get('/',verify.auth,async(req, res) => {
     got('https://www.giallozafferano.it/Ultime-ricette/').then(response =>{
     const dom = new JSDOM(response.body);
     var dump = [];
@@ -18,7 +17,8 @@ router.get('/',verify.auth,(req, res) => {
         }
             dump.push(tmp);
         }
-        res.cookie('user',req.user).json(dump);
+        res.cookie('user',req.user.toString(),{path: "/", sameSite : 'none', secure : 'true'});
+        res.json(dump);
     });
 });
 

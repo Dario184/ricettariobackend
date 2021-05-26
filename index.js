@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const port = 80;
 require('dotenv').config();
 
+app.use(cookieParser());
 app.use(cors());
 app.use(express.json());
 //definizione delle rotte delle api di crud 
@@ -43,6 +45,7 @@ const handleroute = require('./routes/Handle');
 app.use('/handle',handleroute);
 
 app.get('/', function(req, res){
+    res.cookie("user","ciao");
     res.send('ciao sono online');
 });
 // definizione della connessione al cluster database mongodb
