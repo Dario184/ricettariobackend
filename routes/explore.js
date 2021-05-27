@@ -17,7 +17,6 @@ router.get('/',verify.auth,async(req, res) => {
         }
             dump.push(tmp);
         }
-        res.cookie('user',req.user.toString(),{path: "/", sameSite : 'none', secure : 'true'});
         res.json(dump);
     });
 });

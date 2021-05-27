@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const users = new Schema({
     nome: {type : String, required: true},
+    immagine : {type : String, default : "https://publicdomainvectors.org/photos/generic-avatar.png"},
     nickname: {type : String, required: true, unique: true},
     mail : {type : String, required: true, unique: true},
     password : {type : String, required: true},
