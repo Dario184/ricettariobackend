@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const users = new Schema({
     nome: {type : String, required: true},
-    immagine : {type : String, default : "https://publicdomainvectors.org/photos/generic-avatar.png"},
+    immagine : {type : String, default : "https://leragnaie.com/wp-content/uploads/2018/12/Profile_avatar_placeholder_large.png"},
     nickname: {type : String, required: true, unique: true},
     mail : {type : String, required: true, unique: true},
     password : {type : String, required: true},
